@@ -112,7 +112,7 @@
       ],
       "imdbRating": 6.3,
       "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BYWMxYWVjNzAtMTY0YS00YWQyLWExMGItMjUxODkwYzQyNzMwXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_SY500_CR0,0,328,500_AL_.jpg",
-      "inFavourites": false
+      "inFavourites": true
     },
     {
       "id": "3",
@@ -169,7 +169,7 @@
       ],
       "imdbRating": "",
       "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjI1NTk0NTc1OV5BMl5BanBnXkFtZTgwNTMwMTE4NDM@._V1_SY500_CR0,0,281,500_AL_.jpg",
-      "inFavourites": false
+      "inFavourites": true
     },
     {
       "id": "4",
@@ -279,7 +279,8 @@
         "Matvey Novikov"
       ],
       "imdbRating": 7.8,
-      "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMzU3ODQ3MzQ5Nl5BMl5BanBnXkFtZTgwMDQwMDIzNDM@._V1_SY500_CR0,0,338,500_AL_.jpg"
+      "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMzU3ODQ3MzQ5Nl5BMl5BanBnXkFtZTgwMDQwMDIzNDM@._V1_SY500_CR0,0,338,500_AL_.jpg",
+      "inFavourites": true
     },
     {
       "id": "6",

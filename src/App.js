@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./App.sass";
 import MovieOverview from "./components/movie_overview";
 import MovieDetails from "./components/movie_details";
 import axios from "axios";
@@ -36,11 +36,11 @@ class App extends Component {
 
   toggleFavourites(movie) {
     movie.inFavourites = !movie.inFavourites;
-    axios.put(`http://localhost:3001/data/${movie.id}`, (movie)).then(res => {
+    axios.put(`http://localhost:3001/data/${movie.id}`, movie).then(res => {
       const updated = this.state.movies.map(movie => {
         if (movie.id === res.data.id) movie = res.data;
         return movie;
-      })
+      });
       this.setState({ movies: updated });
     });
   }
