@@ -169,7 +169,7 @@
       ],
       "imdbRating": "",
       "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjI1NTk0NTc1OV5BMl5BanBnXkFtZTgwNTMwMTE4NDM@._V1_SY500_CR0,0,281,500_AL_.jpg",
-      "inFavourites": true
+      "inFavourites": false
     },
     {
       "id": "4",
@@ -225,7 +225,7 @@
       ],
       "imdbRating": 5,
       "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BYThiMjg4ZDAtNjk5ZS00ZTUxLThmM2ItMGI0ZTE1NjRhNWNmXkEyXkFqcGdeQXVyNTQ3MjE4NTU@._V1_SY500_CR0,0,334,500_AL_.jpg",
-      "inFavourites": false
+      "inFavourites": true
     },
     {
       "id": "5",

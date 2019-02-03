@@ -1,9 +1,9 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./App.sass";
+import axios from "axios";
 import MovieOverview from "./components/movie_overview";
 import MovieDetails from "./components/movie_details";
-import axios from "axios";
-import { BrowserRouter, Route } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -24,6 +24,7 @@ class App extends Component {
     });
   }
 
+  // filter movies by specific key (ex: show only favourites)
   filterByKey(key, value) {
     const filtered = this.state.movies.filter(movie => movie[key] === value);
     this.setState({ movies: filtered });
@@ -34,6 +35,7 @@ class App extends Component {
     this.setState({ movies });
   }
 
+  // add/remove movie from favourites
   toggleFavourites(movie) {
     movie.inFavourites = !movie.inFavourites;
     axios.put(`http://localhost:3001/data/${movie.id}`, movie).then(res => {

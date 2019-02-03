@@ -28,10 +28,10 @@ const MovieDetails = (props) => {
           <p>
             <strong>Ratings: </strong>
             <span className="badge badge-pill badge-warning">
-              imdb: {props.movie.imdbRating || 'not specified'}
+              IMDb: {props.movie.imdbRating || 'not specified'}
             </span>
             <span className="badge badge-pill badge-warning ml-1 large">
-              user: {userRating}
+              User: {userRating}
             </span>
           </p>
           <p>

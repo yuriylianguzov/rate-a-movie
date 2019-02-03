@@ -22,6 +22,7 @@ class MovieOverviewItem extends Component {
       history.push(`/details/${this.props.movie.id}`);
       return <Redirect to={`/details/${this.props.movie.id}`} />;
     }
+
     return (
       <div
         className="row align-items-center justify-content-start mb-3 movie-container"

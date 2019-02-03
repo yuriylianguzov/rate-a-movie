@@ -1,4 +1,4 @@
-// helper function which do not affect app state
+// helper functions which do not affect app state
 
 
 // convert duration ISO-8061 to hh:mm
@@ -7,13 +7,9 @@ export function humanizeDuration(duration) {
   let matches = duration.match(isoregex);
   if(matches) {
     let parsed = parseFloat(matches[7]) || 0;
-    // let hours = 0;
-    // let minutes = 0;
-
     let minutes = Math.floor(parsed%60);
     let hours = (parsed-minutes) / 60;
-    
-    return hours + ' hr ' + minutes + ' min ';
+    return hours + ' hr ' + minutes + ' min';
   } else {
     return 'unknown';
   }

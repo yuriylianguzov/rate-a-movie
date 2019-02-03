@@ -20,10 +20,16 @@ class MovieOverview extends Component {
     };
   }
 
+  componentDidMount() {
+    // sort by title ascending order
+    this.toggleSortChange('title');
+  }
+
   handleFilterQueryChange(value) {
     this.setState({ searchQuery: value });
   }
 
+  // sort table by field
   toggleSortChange(field) {
     if (this.state.ordering === Order.NONE) {
       this.setState({
@@ -42,20 +48,20 @@ class MovieOverview extends Component {
     }
   }
 
+  // filter used for live search
   filterItems(item, key) {
     if (key) {
       return item[key] === true;
     } else {
       return (
-        item.title
-          .toUpperCase()
-          .includes(this.state.searchQuery.toUpperCase()) ||
+        item.title.toUpperCase().includes(this.state.searchQuery.toUpperCase()) ||
         item.year.toString().includes(this.state.searchQuery) ||
         item.imdbRating.toString().includes(this.state.searchQuery)
       );
     }
   }
 
+  // filter by favourites
   filterByKey(key, value) {
     this.setState({ filter_by_favourites: true });
     this.props.onFilterChange(key, value);
@@ -66,6 +72,7 @@ class MovieOverview extends Component {
     this.props.onFilterReset();
   }
 
+  // sort an array using filter on state change
   sortItems(a, b) {
     if (this.state.ordering === Order.ASC) {
       if (a[this.state.sort_field] < b[this.state.sort_field]) return -1;
@@ -135,7 +142,7 @@ class MovieOverview extends Component {
             className="col-md-2 sortable"
             onClick={() => this.toggleSortChange("imdbRating")}
           >
-            IMDB Rating
+            IMDb Rating
             <span
               className={this.state.sort_field === "imdbRating" ? "" : "hidden"}
             >
