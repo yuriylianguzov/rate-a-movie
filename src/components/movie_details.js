@@ -1,10 +1,12 @@
 import React from "react";
-import StarButton from "./star_button";
-import { humanizeDuration } from '../helpers';
+import { StarButton } from "./star_button";
+import { humanizeDuration } from "../helpers";
 import { Link } from "react-router-dom";
 
-const MovieDetails = (props) => {
-  const userRating = (props.movie.ratings.reduce((a, b) => a + b, 0) / props.movie.ratings.length).toFixed(1);
+const MovieDetails = props => {
+  const userRating = (
+    props.movie.ratings.reduce((a, b) => a + b, 0) / props.movie.ratings.length
+  ).toFixed(1);
   const duration = humanizeDuration(props.movie.duration);
 
   return (
@@ -28,7 +30,7 @@ const MovieDetails = (props) => {
           <p>
             <strong>Ratings: </strong>
             <span className="badge badge-pill badge-warning">
-              IMDb: {props.movie.imdbRating || 'not specified'}
+              IMDb: {props.movie.imdbRating || "not specified"}
             </span>
             <span className="badge badge-pill badge-warning ml-1 large">
               User: {userRating}
@@ -57,15 +59,14 @@ const MovieDetails = (props) => {
           </p>
           <p>
             <strong>Content rating: </strong>
-            {props.movie.contentRating || 'not specified'}
+            {props.movie.contentRating || "not specified"}
           </p>
           <p>
             <strong>Duration: </strong>
             {duration}
           </p>
         </div>
-        <Link to="/" className="fas fa-times close-icon">
-        </Link>
+        <Link to="/" className="fas fa-times close-icon" />
       </div>
     </div>
   );

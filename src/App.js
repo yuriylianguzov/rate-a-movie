@@ -10,29 +10,16 @@ class App extends Component {
     super(props);
 
     this.state = {
-      movies: [],
-      filteredMovies: []
+      movies: []
     };
   }
 
   componentDidMount() {
     axios.get(`http://localhost:3001/data`).then(res => {
       this.setState({
-        movies: res.data,
-        moviesCopy: res.data
+        movies: res.data
       });
     });
-  }
-
-  // filter movies by specific key (ex: show only favourites)
-  filterByKey(key, value) {
-    const filtered = this.state.movies.filter(movie => movie[key] === value);
-    this.setState({ movies: filtered });
-  }
-
-  resetFilter() {
-    const movies = this.state.moviesCopy;
-    this.setState({ movies });
   }
 
   // add/remove movie from favourites
@@ -58,8 +45,6 @@ class App extends Component {
               render={() => (
                 <MovieOverview
                   movies={this.state.movies}
-                  onFilterChange={this.filterByKey.bind(this)}
-                  onFilterReset={this.resetFilter.bind(this)}
                   onToggleFavourites={this.toggleFavourites.bind(this)}
                 />
               )}

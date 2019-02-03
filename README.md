@@ -22,3 +22,9 @@ Install packages and run the dev server
 npm install
 npm start
 ```
+
+Run tests
+
+```bash
+npm test
+```

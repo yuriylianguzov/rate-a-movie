@@ -1,29 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 
-class StarButton extends Component {
+const StarButton = ({ movie, onToggleFavourites }) => (
+  <div>
+    <i
+      className={movie.inFavourites ? "fas fa-star" : "far fa-star"}
+      onClick={e => {
+        e.stopPropagation();
+        onToggleFavourites(movie);
+      }}
+    />
+  </div>
+);
 
-  toggleFavourites = (e) => {
-    e.stopPropagation();
-    this.props.onToggleFavourites(this.props.movie);
-  }
-
-  render() {
-    let starButton;
-    const inFavourites = this.props.movie.inFavourites;
-
-    if (inFavourites) {
-      starButton = (
-        <i className="fas fa-star"
-          onClick={this.toggleFavourites} />
-      );
-    } else {
-      starButton = (
-        <i className="far fa-star"
-          onClick={this.toggleFavourites} />
-      );
-    }
-    return <div>{starButton}</div>;
-  }
-}
-
-export default StarButton;
+export { StarButton };

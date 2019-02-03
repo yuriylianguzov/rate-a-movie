@@ -55,7 +55,7 @@
       ],
       "imdbRating": 7,
       "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SY500_CR0,0,337,500_AL_.jpg",
-      "inFavourites": true
+      "inFavourites": false
     },
     {
       "id": "2",
@@ -169,7 +169,7 @@
       ],
       "imdbRating": "",
       "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjI1NTk0NTc1OV5BMl5BanBnXkFtZTgwNTMwMTE4NDM@._V1_SY500_CR0,0,281,500_AL_.jpg",
-      "inFavourites": false
+      "inFavourites": true
     },
     {
       "id": "4",
@@ -280,7 +280,7 @@
       ],
       "imdbRating": 7.8,
       "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMzU3ODQ3MzQ5Nl5BMl5BanBnXkFtZTgwMDQwMDIzNDM@._V1_SY500_CR0,0,338,500_AL_.jpg",
-      "inFavourites": true
+      "inFavourites": false
     },
     {
       "id": "6",
@@ -833,7 +833,8 @@
         "Eric Johnson"
       ],
       "imdbRating": 4.2,
-      "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYxOTQ1MzI0Nl5BMl5BanBnXkFtZTgwMzgwMzIxNDM@._V1_SY500_CR0,0,315,500_AL_.jpg"
+      "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYxOTQ1MzI0Nl5BMl5BanBnXkFtZTgwMzgwMzIxNDM@._V1_SY500_CR0,0,315,500_AL_.jpg",
+      "inFavourites": true
     },
     {
       "id": "16",

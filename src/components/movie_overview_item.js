@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import StarButton from "./star_button";
+import { StarButton } from "./star_button";
 import history from "../history";
 
 class MovieOverviewItem extends Component {

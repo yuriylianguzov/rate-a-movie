@@ -7,29 +7,37 @@ const Order = {
   DESC: "DESC"
 };
 
+// filter to apply when mapping over movies to render
+const filterByFavorites = (applyFilter, item, key) => {
+  if (applyFilter) {
+    return item[key] === true;
+  }
+  return true;
+};
+
 class MovieOverview extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       searchQuery: "",
-      ordering: Order.NONE,
-      sort_icon: "",
-      sort_field: "",
+      ordering: Order.ASC,
+      sort_icon: "fas fa-sort-amount-up",
+      sort_field: "title",
       filter_by_favourites: false
     };
   }
 
-  componentDidMount() {
-    // sort by title ascending order
-    this.toggleSortChange('title');
-  }
+  // toggle filter by favourites
+  toggleFavouritesFilter = () => {
+    this.setState({ filter_by_favourites: !this.state.filter_by_favourites });
+  };
 
   handleFilterQueryChange(value) {
     this.setState({ searchQuery: value });
   }
 
-  // sort table by field
+  // toggle sort order and field to sort by
   toggleSortChange(field) {
     if (this.state.ordering === Order.NONE) {
       this.setState({
@@ -54,25 +62,16 @@ class MovieOverview extends Component {
       return item[key] === true;
     } else {
       return (
-        item.title.toUpperCase().includes(this.state.searchQuery.toUpperCase()) ||
+        item.title
+          .toUpperCase()
+          .includes(this.state.searchQuery.toUpperCase()) ||
         item.year.toString().includes(this.state.searchQuery) ||
         item.imdbRating.toString().includes(this.state.searchQuery)
       );
     }
   }
 
-  // filter by favourites
-  filterByKey(key, value) {
-    this.setState({ filter_by_favourites: true });
-    this.props.onFilterChange(key, value);
-  }
-
-  resetFilter() {
-    this.setState({ filter_by_favourites: false });
-    this.props.onFilterReset();
-  }
-
-  // sort an array using filter on state change
+  // sort an array by order
   sortItems(a, b) {
     if (this.state.ordering === Order.ASC) {
       if (a[this.state.sort_field] < b[this.state.sort_field]) return -1;
@@ -84,28 +83,7 @@ class MovieOverview extends Component {
   }
 
   render() {
-    const filterByFavourites = this.state.filter_by_favourites;
-    let label;
-
-    if (filterByFavourites) {
-      label = (
-        <span
-          className="title-filter badge badge-dark"
-          onClick={() => this.resetFilter("inFavourites")}
-        >
-          Favourites
-        </span>
-      );
-    } else {
-      label = (
-        <span
-          className="title-filter"
-          onClick={() => this.filterByKey("inFavourites", true)}
-        >
-          Favourites
-        </span>
-      );
-    }
+    const { filter_by_favourites } = this.state;
 
     return (
       <div className="container">
@@ -125,35 +103,59 @@ class MovieOverview extends Component {
             onClick={() => this.toggleSortChange("title")}
           >
             Title
-            <span className={this.state.sort_field === "title" ? "" : "hidden"}>
-              <i className={this.state.sort_icon} />
-            </span>
+            <i
+              className={
+                this.state.sort_field === "title"
+                  ? this.state.sort_icon
+                  : "fas fa-sort"
+              }
+            />
           </div>
           <div
             className="col-md-2 text-md-left sortable"
             onClick={() => this.toggleSortChange("year")}
           >
             Year
-            <span className={this.state.sort_field === "year" ? "" : "hidden"}>
-              <i className={this.state.sort_icon} />
-            </span>
+            <i
+              className={
+                this.state.sort_field === "year"
+                  ? this.state.sort_icon
+                  : "fas fa-sort"
+              }
+            />
           </div>
           <div
             className="col-md-2 sortable"
             onClick={() => this.toggleSortChange("imdbRating")}
           >
             IMDb Rating
+            <i
+              className={
+                this.state.sort_field === "imdbRating"
+                  ? this.state.sort_icon
+                  : "fas fa-sort"
+              }
+            />
+          </div>
+          <div className="col-md-2 sortable">
             <span
-              className={this.state.sort_field === "imdbRating" ? "" : "hidden"}
+              className={
+                filter_by_favourites
+                  ? "title-filter badge badge-dark"
+                  : "title-filter badge badge-light"
+              }
+              onClick={this.toggleFavouritesFilter}
             >
-              <i className={this.state.sort_icon} />
+              Favourites
             </span>
           </div>
-          <div className="col-md-2 sortable">{label}</div>
         </div>
         {this.props.movies
           .sort((a, b) => this.sortItems(a, b))
           .filter(item => this.filterItems(item))
+          .filter(item =>
+            filterByFavorites(filter_by_favourites, item, "inFavourites")
+          )
           .map(movie => (
             <MovieOverviewItem
               key={movie.id}
