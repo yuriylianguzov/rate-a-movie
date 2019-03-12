@@ -4,6 +4,8 @@ const moviesReducer = (state = [], action) => {
   switch (action.type) {
     case "FETCH_MOVIES":
       return action.payload;
+    case "UPDATE_MOVIES":
+      return action.payload;
     default:
       return state;
   }
@@ -12,6 +14,8 @@ const moviesReducer = (state = [], action) => {
 const movieReducer = (state = null, action) => {
   switch (action.type) {
     case "FETCH_MOVIE":
+      return action.payload;
+    case "TOGGLE_FAVOURITES":
       return action.payload;
     default:
       return state;

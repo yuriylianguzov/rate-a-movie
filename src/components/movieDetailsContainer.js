@@ -12,7 +12,7 @@ class MovieDetailsContainer extends Component {
     if (this.props.movie) {
       return <MovieDetails movie={this.props.movie} />;
     }
-    return <div />;
+    return null;
   }
 }
 

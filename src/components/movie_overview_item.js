@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import { StarButton } from "./star_button";
+import StarButton from "./star_button";
 import history from "../history";
 
 class MovieOverviewItem extends Component {
@@ -42,10 +42,7 @@ class MovieOverviewItem extends Component {
         <div className="col-md-2">{this.props.movie.imdbRating}</div>
 
         <div className="col-md-2">
-          <StarButton
-            movie={this.props.movie}
-            onToggleFavourites={this.props.onToggleFavourites}
-          />
+          <StarButton movie={this.props.movie} />
         </div>
       </div>
     );

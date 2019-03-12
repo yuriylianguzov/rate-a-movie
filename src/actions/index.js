@@ -3,7 +3,6 @@ import { humanizeDuration } from "../helpers";
 
 export const fetchMovies = () => async dispatch => {
   const response = await movies.get();
-  console.log("fetch movies response: ", response);
   dispatch({ type: "FETCH_MOVIES", payload: response.data });
 };
 
@@ -18,20 +17,20 @@ export const fetchMovie = id => async dispatch => {
   dispatch({ type: "FETCH_MOVIE", payload: response.data });
 };
 
-// export const toggleFavourites = movie => async dispatch => {
+// add/remove movie from favourites
+// toggleFavourites(movie) {
 //   movie.inFavourites = !movie.inFavourites;
+//   axios.put(`http://localhost:3001/data/${movie.id}`, movie).then(res => {
+//     const updated = this.props.movies.map(movie => {
+//       if (movie.id === res.data.id) movie = res.data;
+//       return movie;
+//     });
+//     this.setState({ movies: updated });
+//   });
+// }
 
-//   // .then(res => {
-//   //   const updated = this.props.movies.map(movie => {
-//   //     if (movie.id === res.data.id) movie = res.data;
-//   //     return movie;
-//   //   });
-//   dispatch({ type: "TOGGLE_FAVOURITES", payload: response.data });
-// };
-
-export const selectMovie = movie => {
-  return {
-    type: "MOVIE_SELECTED",
-    payload: movie
-  };
+export const toggleFavourites = movie => async dispatch => {
+  movie.inFavourites = !movie.inFavourites;
+  const response = await movies.put(`/${movie.id}`, movie);
+  dispatch({ type: "TOGGLE_FAVOURITES", payload: response.data });
 };

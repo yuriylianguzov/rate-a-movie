@@ -1,17 +1,8 @@
-import React, { Component } from "react";
-import { StarButton } from "./star_button";
-import { humanizeDuration } from "../helpers";
+import React from "react";
+import StarButton from "./star_button";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
 
 const MovieDetails = ({ movie }) => {
-  // console.log("props: ", thiprops);
-  console.log("movie from component", movie);
-  // if (movie) {
-  //   return <div> movie </div>;
-  // } else {
-  //   return <div> no movie </div>;
-  // }
   return (
     <div className="container movie-details-wrap">
       <div className="row mt-md-5 movie-details">
