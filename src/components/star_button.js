@@ -25,7 +25,7 @@ class StarButton extends Component {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onClick: () => {
+    toggleFavourites: () => {
       dispatch(toggleFavourites(ownProps.movie));
     }
   };

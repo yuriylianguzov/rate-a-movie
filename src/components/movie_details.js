@@ -24,7 +24,7 @@ const MovieDetails = ({ movie }) => {
               IMDb: {movie.imdbRating || "not specified"}
             </span>
             <span className="badge badge-pill badge-warning ml-1 large">
-              User: {movie.userRating}
+              User: {movie.userRatingFormatted}
             </span>
           </p>
           <p>
@@ -54,7 +54,7 @@ const MovieDetails = ({ movie }) => {
           </p>
           <p>
             <strong>Duration: </strong>
-            {movie.duration}
+            {movie.humanizedDuration}
           </p>
         </div>
         <Link to="/" className="fas fa-times close-icon" />

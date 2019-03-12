@@ -55,7 +55,9 @@
       ],
       "imdbRating": 7,
       "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SY500_CR0,0,337,500_AL_.jpg",
-      "inFavourites": false
+      "inFavourites": true,
+      "userRatingFormatted": "5.6",
+      "humanizedDuration": "2 hr 14 min"
     },
     {
       "id": "2",
