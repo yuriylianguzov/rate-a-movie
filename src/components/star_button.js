@@ -23,11 +23,15 @@ class StarButton extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { movie: state.movie };
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onClick: () => {
+      dispatch(toggleFavourites(ownProps.movie));
+    }
+  };
 };
 
 export default connect(
-  mapStateToProps,
-  { toggleFavourites }
+  null,
+  mapDispatchToProps
 )(StarButton);
