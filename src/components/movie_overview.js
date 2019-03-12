@@ -18,7 +18,6 @@ const filterByFavorites = (applyFilter, item, key) => {
 class MovieOverview extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       searchQuery: "",
       ordering: Order.ASC,

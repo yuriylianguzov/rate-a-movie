@@ -55,7 +55,9 @@
       ],
       "imdbRating": 7,
       "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SY500_CR0,0,337,500_AL_.jpg",
-      "inFavourites": false
+      "inFavourites": true,
+      "userRatingFormatted": "5.6",
+      "humanizedDuration": "2 hr 14 min"
     },
     {
       "id": "2",
@@ -100,7 +102,7 @@
       ],
       "poster": "MV5BYWMxYWVjNzAtMTY0YS00YWQyLWExMGItMjUxODkwYzQyNzMwXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_SY500_CR0,0,328,500_AL_.jpg",
       "contentRating": "PG",
-      "duration": "PT89M",
+      "duration": "PT157M",
       "releaseDate": "2018-03-23",
       "averageRating": 0,
       "originalTitle": "Early Man",
@@ -157,7 +159,7 @@
       ],
       "poster": "MV5BMjI1NTk0NTc1OV5BMl5BanBnXkFtZTgwNTMwMTE4NDM@._V1_SY500_CR0,0,281,500_AL_.jpg",
       "contentRating": "",
-      "duration": "PT157M",
+      "duration": "PT89M",
       "releaseDate": "2018-02-16",
       "averageRating": 0,
       "originalTitle": "",
@@ -169,7 +171,9 @@
       ],
       "imdbRating": "",
       "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjI1NTk0NTc1OV5BMl5BanBnXkFtZTgwNTMwMTE4NDM@._V1_SY500_CR0,0,281,500_AL_.jpg",
-      "inFavourites": true
+      "inFavourites": true,
+      "userRatingFormatted": "6.2",
+      "humanizedDuration": "1 hr 29 min"
     },
     {
       "id": "4",
